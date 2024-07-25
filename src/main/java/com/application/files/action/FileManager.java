@@ -2,7 +2,6 @@ package com.application.files.action;
 
 import com.application.files.Type;
 import com.application.options.OptionsConstants;
-import com.application.writer.DefaultFileName;
 import com.application.writer.FileWriterFactory;
 
 import java.io.IOException;
@@ -11,7 +10,6 @@ public class FileManager {
 
     private final FileChecker fileChecker = new FileChecker();
     private final FileRenamer fileRenamer = new FileRenamer();
-    private final DefaultFileName defaultFileName = new DefaultFileName();
     private final FileWriterFactory fileWriterFactory = new FileWriterFactory();
 
     public void run(Type fileType, String contentToWrite) throws IOException {
