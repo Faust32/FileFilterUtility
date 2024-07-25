@@ -19,15 +19,15 @@ java -jar fileFilter.jar [options] <input-file1> <input-file2> ...
 
 ### Options
 
-'-o <path>': Specify output directory (default: current directory)
+`-o <path>`: Specify output directory (default: current directory)
 
-'-p <prefix>': Set prefix for output files (default: no prefix)
+`-p <prefix>`: Set prefix for output files (default: no prefix)
 
-'-a': Append to existing files instead of overwriting
+`-a`: Append to existing files instead of overwriting
 
-'-s': Generate short statistics
+`-s`: Generate short statistics
 
-'-f': Generate full statistics
+`-f`: Generate full statistics
 
 
 ### Output Files
