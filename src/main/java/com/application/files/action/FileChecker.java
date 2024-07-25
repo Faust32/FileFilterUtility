@@ -3,6 +3,7 @@ package com.application.files.action;
 import com.application.files.Type;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.nio.file.Paths;
 
 public class FileChecker {
@@ -33,7 +34,7 @@ public class FileChecker {
         File directory = new File(packagePath);
         if (directory.exists() && directory.isDirectory()) {
             String fileName = getDefaultFileName(prefix, fileType);
-            File[] files = listFilesInDirectory(directory);
+            File[] files = listFilesInDirectory(packagePath);
             for (File file : files) {
                 if (file.getName().equals(fileName)) {
                     return true;
@@ -48,11 +49,21 @@ public class FileChecker {
     }
 
 
-    public File[] listFilesInDirectory(File directory) {
+    public File[] listFilesInDirectory(String path) {
+        File directory;
+        if (path.isEmpty()) {
+            directory = new File(System.getProperty("user.dir"));
+        } else {
+            directory = new File(path);
+        }
+
         if (directory.exists() && directory.isDirectory()) {
-            return directory.listFiles();
+            return directory.listFiles((dir, name) -> name.contains("integers.txt") ||
+                    name.contains("strings.txt") ||
+                    name.contains("floats.txt"));
         }
         return new File[0];
     }
+
 
 }

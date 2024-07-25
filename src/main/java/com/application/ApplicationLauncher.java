@@ -24,11 +24,12 @@ public class ApplicationLauncher {
 
     public void launch(String[] args) throws IOException {
         String[] filesToScan = optionsManager.initialize(args);
-        File directory = new File(OptionsConstants.getPathForResults());
+        String directory = OptionsConstants.getPathForResults();
         File[] files = fileChecker.listFilesInDirectory(directory);
 
         cleanFilesIfNeeded(files);
         scanFiles(filesToScan);
+        files = fileChecker.listFilesInDirectory(directory);
         processStatistics(files);
     }
 
