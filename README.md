@@ -32,11 +32,11 @@ java -jar fileFilter.jar [options] <input-file1> <input-file2> ...
 
 ### Output Files
 
-'<prefix>integers.txt': Contains sorted integer values
+`<prefix>integers.txt`: Contains sorted integer values
 
-'<prefix>floats.txt': Contains sorted floating-point values
+`<prefix>floats.txt`: Contains sorted floating-point values
 
-'<prefix>strings.txt': Contains sorted string values
+`<prefix>strings.txt`: Contains sorted string values
 
 
 ## Statistics
